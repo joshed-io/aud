@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+require 'aud'
+require 'aud/cli'
+
+Aud::CLI.start
