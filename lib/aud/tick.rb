@@ -7,8 +7,8 @@ module Aud
     attr_accessor :output
     attr_accessor :properties
 
-    def initialize(output, properties, _midi=MIDI::IO(output))
-      self.midi = _midi
+    def initialize(output, properties, _midi=nil)
+      self.midi = _midi || MIDI::IO.new(output)
       self.properties = properties
     end
 
