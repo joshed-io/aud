@@ -13,15 +13,9 @@ module Aud
     end
 
     def process(line)
-      self.midi.octave(properties[:octave] || 3)
-      self.midi.note(to_note(line), :channel => properties[:channel])
+      self.midi.octave(properties[:octave])
+      self.midi.note(properties[:note], :channel => properties[:channel])
       self.midi.off
-    end
-
-    private
-
-    def to_note(line)
-      "C"
     end
   end
 end

@@ -10,18 +10,18 @@ describe Aud::Tick do
     @mock_output ||= Object.new
   end
 
-  let(:properties) { { :octave => 1, :channel => 2 } }
+  let(:properties) { { :octave => 1, :channel => 2, :note => 'B' } }
 
-  it "should initialize with options" do
+  it 'should initialize with options' do
     aud = Aud::Tick.new(mock_output, properties, mock_midi)
     aud.properties.should == properties
   end
 
-  it "should play a note" do
+  it 'should play a note' do
     aud = Aud::Tick.new(mock_output, properties, mock_midi)
     mock_midi.should_receive(:octave).with(1)
-    mock_midi.should_receive(:note).with("C", :channel => 2)
+    mock_midi.should_receive(:note).with('B', :channel => 2)
     mock_midi.should_receive(:off)
-    aud.process("beep")
+    aud.process('beep')
   end
 end
