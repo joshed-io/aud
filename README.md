@@ -1,10 +1,10 @@
-## Listen to your log files with `aud`
+### Listen to your log files with `aud`
+
+`aud` is an open source utility that plays tones in response to input. Usage is simple:
 
 ``` bash
 $ tail -f access.log | aud
 ```
-
-`aud` is an open source utility that plays tones in response to input.
 
 Here's a few ways to use `aud`:
 
