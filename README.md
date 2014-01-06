@@ -1,32 +1,38 @@
 ## Listen to your log files with `aud`
 
-`aud` is an open source utility that plays sounds in response to text-based input. Pipe, cat, or tail your files to `aud` and **audibilize** them. Here's some ways to use `aud`:
+``` bash
+$ tail -f access.log | aud
+```
 
-+ Get an audible alert when exceptions happen.
+`aud` is an open source utility that plays tones in response to input.
+
+Here's a few ways to use `aud`:
+
++ Hear an alert when a log contains an exception.
 + Learn the *rhythm* of a system, like you would a car engine.
 + Sense the relationship between two or more concurrent components.
 
-The human hearing system is remarkably good at [isolating sounds](http://physicsworld.com/cws/article/news/2013/jan/31/human-hearing-is-highly-nonlinear) and detecting patterns. Why not use it to intuit more about how information-processing systems work?
+The human hearing system is remarkably good at [isolating sounds](http://physicsworld.com/cws/article/news/2013/jan/31/human-hearing-is-highly-nonlinear) and detecting patterns. Why not use it to intuit how information-processing systems actually work?
 
-[The Sound of Sorting](http://panthema.net/2013/sound-of-sorting) uses video and sound to *show* you how sorting algorightms work, rather than just tell you. Bret Victor's talk [Inventing on Principle](http://vimeo.com/36579366) explains why creators need a physical, immediate connection to their creations. These and more inspired me to write `aud`.
+[The Sound of Sorting](http://panthema.net/2013/sound-of-sorting) uses video and sound to *show* you how sorting algorightms work, not just tell you. Bret Victor's talk [Inventing on Principle](http://vimeo.com/36579366) explains why creators need a physical, immediate connection to their creations. These and more inspired me to write `aud`.
 
 ### Install aud
 
 `aud` is a Ruby gem, and should work with most Ruby versions. Install it as follows:
 
-```
+``` bash
 $ gem install aud
 ```
 
-Once installed, the `aud` command should be available on your path. You can print help information to be sure.
+Once installed, the `aud` command should be available on your path. You can print aud's help information to be sure.
 
-```
+``` bash
 $ aud help listen
 ```
 
-### MIDI Setup
+### Setup a MIDI Input and Output
 
-You won't hear anything until you configure a MIDI input and output. Here follows instructions for Mac OSX, but other operating systems should also work. If you get it working on your platform I'd love to know how and share with others!
+You won't hear anything until you configure a MIDI input and output. This README includes instructions for Mac OSX, but you can run `aud` on other platforms too. See the [UniMIDI README](https://github.com/arirusso/unimidi) for more information.
 
 ##### Mac OSX Instructions
 
@@ -46,7 +52,7 @@ You won't hear anything until you configure a MIDI input and output. Here follow
 
 `aud` accepts input via STDIN, just like grep, awk, or sed. That means you can cat, echo, or tail lines of text to it. Here's an example:
 
-```
+``` bash
 $ cat access.log | aud
 ```
 
@@ -54,7 +60,7 @@ If everything is set up correctly, you should hear a note played for each line o
 
 The pitch, octave, and duration of the note are configurable. Here's the full set of options, taken from `aud help listen`:
 
-```
+``` bash
   -o, [--octave=Set an octave [1-5]]
                                                                       # Default: 3
   -n, [--note=The note to play [A-G]]
@@ -69,34 +75,35 @@ The pitch, octave, and duration of the note are configurable. Here's the full se
       [--silent=Suppress printing of input]
 ```
 
-### Real-world example
+### Real-world examples
+
+##### Web logs
 
 Listen to web logs and get a sense for traffic volume and error rates.
 
-```
+``` bash
 $ tail -f access.log | grep 200 | aud -n C -d 10 &
 $ tail -f access.log | grep 404 | aud -n B -d 100 &
 $ tail -f access.log | grep 500 | aud -n F -d 500 &
-
 ```
 
 This example plays a short middle C for 200s, a longer B for 404s, and an even longer F for 500s.
 
-##### In distributed or complex systems
+##### Distributed or complex systems
 
 I use `aud` to understand and troubleshoot patterns within complex distributed systems, like the kind I work on at [Keen IO](https://keen.io).
 
-Our distributed backend includes [Storm](http://storm-project.net/), [Cassandra](http://cassandra.apache.org/), [Kafka](https://kafka.apache.org/), [Zookeeper](http://zookeeper.apache.org/), and more. These applications form a complex realtime mesh of activity, and generate a *lot* of log files in doing so.
+Our distributed backend includes [Storm](http://storm-project.net/), [Cassandra](http://cassandra.apache.org/), [Kafka](https://kafka.apache.org/), [Zookeeper](http://zookeeper.apache.org/), and more. These applications form a complex realtime mesh of activity, and generate a *lot* of log files.
 
-I use `ssh` and `aud` as a sort of stethoscope, listening to the whole system simultaneously. I get a better **feeling** for what's happening this way than I could by grepping for multiple pieces of text. As a result, I can detect errors and deviations in performance quickly and with little cognitive effort. As you can imagine, listening for rhythms is way less exhausting than trying to keep up with lines of text as they race by!
+I use `ssh` and `aud` as a stethoscope, listening to the rumpus as it happens. I get a better **feeling** for what's happening this way than I could by grepping for multiple pieces of text. As a result, I can detect errors and deviations in performance quickly and with little cognitive effort. As you can imagine, listening for rhythms is way less exhausting than trying to keep up with lines of text as they race by!
 
 ### Contributing
 
-`aud` is by no means a flag on a summit, but rather a trailhead for exploring the relationship between sound, systems, and human perception. As such, I heartily invite your comments and contributions.
+Today, `aud` is only a trailhead for exploring the relationship between sound, information systems, and human perception. As such, I heartily invite your comments and contributions.
 
 To hack on `aud`, clone or fork this repository. Then:
 
-```
+``` bash
 # install developement dependencies
 $ bundle install
 
