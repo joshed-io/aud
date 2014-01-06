@@ -69,6 +69,16 @@ The pitch, octave, and duration of the note are configurable. Here's the full se
       [--silent=Suppress printing of input]
 ```
 
+### Real-world example
+
+Listen to web logs and get a sense for traffic volume and error rates.
+
+```
+$ tail -f access.log | grep 200 | aud -n C -d 10 &
+$ tail -f access.log | grep 404 | aud -n B -d 100 &
+$ tail -f access.log | grep 500 | aud -n F -d 500 &
+
+```
 
 ### Contributing
 
