@@ -1,13 +1,12 @@
 ## Listen to your log files with `aud`
 
-`aud` is an open source command line utility that plays sounds in response to text-based input. Pipe, cat, or tail your files to `aud` and **audibilize** them. Here's some ways to use `aud`:
+`aud` is an open source utility that plays sounds in response to text-based input. Pipe, cat, or tail your files to `aud` and **audibilize** them. Here's some ways to use `aud`:
 
-+ Get an audio alert when exceptions happen.
++ Get an audible alert when exceptions happen.
 + Learn the *rhythm* of a system, like you would a car engine.
 + Sense the relationship between two or more concurrent components.
 
-The human hearing system is remarkably good at [isolating sounds](http://physicsworld.com/cws/article/news/2013/jan/31/human-hearing-is-highly-nonlinear) and detecting patterns. Why not use it
-to intuit more about how our information-processing systems work?
+The human hearing system is remarkably good at [isolating sounds](http://physicsworld.com/cws/article/news/2013/jan/31/human-hearing-is-highly-nonlinear) and detecting patterns. Why not use it to intuit more about how information-processing systems work?
 
 [The Sound of Sorting](http://panthema.net/2013/sound-of-sorting) uses video and sound to *show* you how sorting algorightms work, rather than just tell you. Bret Victor's talk [Inventing on Principle](http://vimeo.com/36579366) explains why creators need a physical, immediate connection to their creations. These and more inspired me to write `aud`.
 
@@ -27,7 +26,7 @@ $ aud help listen
 
 ### MIDI Setup
 
-You won't hear anything until you configure a MIDI input and output. Here follows instructions for Mac OSX, but other operating systems should also work. If you get it working on your platform I'd love to know and add more instructions!
+You won't hear anything until you configure a MIDI input and output. Here follows instructions for Mac OSX, but other operating systems should also work. If you get it working on your platform I'd love to know how and share with others!
 
 ##### Mac OSX Instructions
 
@@ -40,6 +39,8 @@ You won't hear anything until you configure a MIDI input and output. Here follow
 <img src="/images/simple_synth.png" alt="SimpleSynth">
 
 (Protip: Turn Channel 2 to "Fl.Key Click" as shown in the screenshot. It sounds cool :)
+
+3) Turn the volume up! Depending on your configuration, MIDI sounds may not be as loud as other sounds.
 
 ### Usage
 
@@ -79,17 +80,19 @@ $ tail -f access.log | grep 500 | aud -n F -d 500 &
 
 ```
 
-##### Distributed systems
+This example plays a short middle C for 200s, a longer B for 404s, and an even longer F for 500s.
 
-I use `aud` to understand and troubleshoot patterns within distributed systems, like the kind I work on at [Keen IO](https://keen.io).
+##### In distributed or complex systems
+
+I use `aud` to understand and troubleshoot patterns within complex distributed systems, like the kind I work on at [Keen IO](https://keen.io).
 
 Our distributed backend includes [Storm](http://storm-project.net/), [Cassandra](http://cassandra.apache.org/), [Kafka](https://kafka.apache.org/), [Zookeeper](http://zookeeper.apache.org/), and more. These applications form a complex realtime mesh of activity, and generate a *lot* of log files in doing so.
 
-I use `ssh` and `aud` to listen to the whole system simultaneously. I get a more accurate **feeling** for what's happening by listening than by grepping for types of of text. As a result, I can detect errors and deviations in performance with just my ears. As you can imagine, this is way less exhausting than trying to read lines of text as they race by!
+I use `ssh` and `aud` as a sort of stethoscope, listening to the whole system simultaneously. I get a better **feeling** for what's happening this way than I could by grepping for multiple pieces of text. As a result, I can detect errors and deviations in performance quickly and with little cognitive effort. As you can imagine, listening for rhythms is way less exhausting than trying to keep up with lines of text as they race by!
 
 ### Contributing
 
-`aud` is by no means a flag on a summit, but rather a trailhead for exploring the relationship between sound, systems, and humans. As such, your comments and contributions are very welcome.
+`aud` is by no means a flag on a summit, but rather a trailhead for exploring the relationship between sound, systems, and human perception. As such, I heartily invite your comments and contributions.
 
 To hack on `aud`, clone or fork this repository. Then:
 
@@ -103,8 +106,8 @@ $ bundle exec rake spec
 
 ### Credits and Acknowledgements
 
-+ The excellent [UNIMidi gem](https://github.com/arirusso/unimidi) and [micromidi gem](https://github.com/arirusso/micromidi), on which `aud` is built
-+ Bret Victor's talk [Inventing on Principle](http://vimeo.com/36579366), as inspiration
++ The excellent [UNIMidi gem](https://github.com/arirusso/unimidi) and [micromidi gem](https://github.com/arirusso/micromidi), upon which `aud` is built
++ Bret Victor's jaw-dropping talk [Inventing on Principle](http://vimeo.com/36579366), as inspiration
 + [The Sound of Sorting](http://panthema.net/2013/sound-of-sorting), as inspiration, and [@dkador](https://github.com/dkador) for first sharing it with me
 
 ### MIT License
@@ -129,4 +132,3 @@ NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
 LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
 OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
