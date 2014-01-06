@@ -41,7 +41,7 @@ module Aud
 
     method_option :silent,
         :type => :boolean,
-        :banner => 'Silence printing of input'
+        :banner => 'Suppress printing of input'
 
     def listen
       case options[:strategy]
