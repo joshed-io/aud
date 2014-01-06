@@ -74,3 +74,12 @@ The pitch, octave, and duration of the note are configurable. Here's the full se
 
 `aud` is by no means a flag on a summit, but rather a trailhead for exploring the relationship between sound, systems, and humans. As such, your comments and contributions are very welcome.
 
+To hack on `aud`, clone or fork this repository. Then:
+
+```
+# install developement dependencies
+$ bundle install
+
+# run tests
+$ bundle exec rake spec
+```
