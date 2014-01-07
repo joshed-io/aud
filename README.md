@@ -1,12 +1,12 @@
 ### Listen to your log files with `aud`
 
-`aud` is an open source utility that plays tones in response to input. Usage is simple:
+`aud` is an open source utility that plays tones in response to input. Using it is easy:
 
 ``` bash
 $ tail -f access.log | aud
 ```
 
-Here's a few ways to use `aud`:
+Here's a few things you can use `aud` for:
 
 + Hear an alert when a log contains an exception.
 + Learn the *rhythm* of a system, like you would a car engine.
@@ -18,7 +18,7 @@ The human hearing system is remarkably good at [isolating sounds](http://physics
 
 ### Install aud
 
-`aud` is a Ruby gem, and should work with most Ruby versions. Install it as follows:
+`aud` is a Ruby gem, and will work with most Ruby versions. Install it as follows:
 
 ``` bash
 $ gem install aud
