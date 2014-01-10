@@ -14,7 +14,7 @@ Here's a few things you can use `aud` for:
 
 The human hearing system is remarkably good at [isolating sounds](http://physicsworld.com/cws/article/news/2013/jan/31/human-hearing-is-highly-nonlinear) and detecting patterns. Why not use it to intuit how information-processing systems actually work?
 
-[The Sound of Sorting](http://panthema.net/2013/sound-of-sorting) uses video and sound to *show* you how sorting algorightms work, not just tell you. Bret Victor's talk [Inventing on Principle](http://vimeo.com/36579366) explains why creators need a physical, immediate connection to their creations. These and more inspired me to write `aud`.
+[The Sound of Sorting](http://panthema.net/2013/sound-of-sorting) uses video and sound to *show* you how sorting algorithms work, not just tell you. Bret Victor's talk [Inventing on Principle](http://vimeo.com/36579366) explains why creators need a physical, immediate connection to their creations. These and more inspired me to write `aud`.
 
 ### Install aud
 
