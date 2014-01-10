@@ -38,11 +38,11 @@ You won't hear anything until you configure a MIDI input and output. This README
 
 1) *Enable the IAC Driver* - Open "Audio MIDI Setup" in your System Preferences. Choose "Open MIDI Window" from the "Windows" option in the Menu Bar. Double-click on "IAC Driver", and check "Device is online".
 
-<img src="/images/audio_midi_setup.png" alt="Audio MIDI Setup">
+<img src="https://raw.github.com/dzello/aud/master//images/audio_midi_setup.png" alt="Audio MIDI Setup">
 
 2) *Download SimpleSynth* - SimpleSynth will play aloud the signals coming across the IAC Driver virtual MIDI controller. Download it [here](http://notahat.com/simplesynth/) and install it. Run it, and make sure the IAC Driver is selected. (Note: You can also use GarageBand [as described here](http://tx81z.blogspot.com/2011/06/osx-unimidi-and-midi-patch-bay.html).)
 
-<img src="/images/simple_synth.png" alt="SimpleSynth">
+<img src="https://raw.github.com/dzello/aud/master/images/simple_synth.png" alt="SimpleSynth">
 
 (Protip: Turn Channel 2 to "Fl.Key Click" as shown in the screenshot. It sounds cool :)
 
